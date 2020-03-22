@@ -2,7 +2,7 @@
 ## Adventurer3Print
 
 ### How to install
-1. Cura の Plugin フォルダに適当なフォルダを作り、Plugin のファイル（Adventurer3Pint.py, __init__.py, pligin.json）をコピーしてください。<BR>
+1. Cura の Plugin フォルダに適当なフォルダを作り、Plugin のファイル（Adventurer3Pint.py, '__init__.py', pligin.json）をコピーしてください。<BR>
    ex.<BR>
    Windows10: %APPDATA%\cura\$CURA_VERSION\plugins\Adventurer3Print<BR>
    Mac OS   : $User/Library/Application\ Support/Cura/$CURA_VERSION/plugins/Adventurer3Print<BR>
