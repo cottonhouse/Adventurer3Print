@@ -54,8 +54,8 @@ class Adv3OutputDevice(OutputDevice): #We need an actual device to do the writin
         self._plugin_path = plugin_path
         #Optionally set some metadata.
         self.setName("Adventurer3_Print") #Human-readable name (you may want to internationalise this). Gets put in messages and such.
-        self.setShortDescription("Send Adv.3") #This is put on the save button.
-        self.setDescription("Send Adv.3")
+        self.setShortDescription("Send to Adv.3") #This is put on the save button.
+        self.setDescription("Send to Adv.3")
         self.setIconName("save")
 
     ##  Called when the user clicks on the button to save to this device.
