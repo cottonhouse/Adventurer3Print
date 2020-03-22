@@ -1,0 +1,8 @@
+{
+    "name": "Adventurer3 Print",
+    "author": "Cottonhouse",
+    "version": "1.0",
+    "api": "7.1",
+    "description": "G-code print use WiFi at Flashforge Adventurer3.",
+    "catalog": "cotton"
+}
