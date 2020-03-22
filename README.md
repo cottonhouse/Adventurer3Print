@@ -8,11 +8,11 @@
 ## How to install
 0. 前提として、Ultimaker Cura で FlashForge Adventurer3 を使う設定が必要です。次のサイトを参照して設定してください。
    https://andybradford.dev/2020/01/12/using-the-monoprice-voxel-with-ultimaker-cura/
-1. Cura の Plugin フォルダに適当なフォルダを作り、Plugin のファイル（Adventurer3Pint.py, \_\_init\_\_.py, pligin.json）をコピーしてください。  
+1. Cura の Plugin フォルダに適当なフォルダを作り、Plugin のファイル（Adventurer3Print.py, \_\_init\_\_.py, plugin.json）をコピーしてください。  
    ex.  
    Windows10: %APPDATA%\cura\\$CURA_VERSION\plugins\Adventurer3Print  
    Mac OS   : $User/Library/Application\ Support/Cura/$CURA_VERSION/plugins/Adventurer3Print  
-画像：Macの例（\_\_pycache\_\_ フォルダは Cura が起動時に作成します。）  
+画像：Macの例（\_\_pycache\_\_ フォルダは Cura が起動時に自動作成しますので、コピー不要です。）  
 ![Folder example for Mac user](../image/image/Folder.png)  
 2. Cura の Machin name の設定の後ろに IP Address を追記してください。（Machine name + IP Address となるようにしてください。）  
    ex. Flashforge Adventurer3 192.168.1.5（画像では 192.168.11.8）  
@@ -63,7 +63,7 @@ https://andybradford.dev/2020/01/12/using-the-monoprice-voxel-with-ultimaker-cur
 Andy Bradford氏による Ultimate Cura で Adventurer3 用の G-Code を作成する設定と、氏が WiFi での印刷を行おうとしている様子を見て、この Plugin 作成を思い立ちました。
 また、Andy氏による以下のソースコードを参考にしています。  
 https://github.com/andycb/AdventurerClientDotNet  
-- Python でコーディングするのは初めてでしたが、使いやすい言語と感じました。関数呼び出しに必ず付けなければいけないスコープ self. に何度も躓きましたが・・・。
+- Python でコーディングするのは初めてでしたが、使いやすい言語と感じました。関数呼び出しに必ず付けなければいけないスコープ self. に何度もやられましたが・・・。
 - Cura の Plugin 開発も初めてでしたが、Document が少ないので試行錯誤の連続でした。Cura 付属の他の Plugin のソースコードが確認できたのは幸いでした。  
 
 
