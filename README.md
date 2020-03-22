@@ -63,6 +63,8 @@ https://andybradford.dev/2020/01/12/using-the-monoprice-voxel-with-ultimaker-cur
 Andy Bradford氏による Ultimate Cura で Adventurer3 用の G-Code を作成する設定と、氏が WiFi での印刷を行おうとしている様子を見て、この Plugin 作成を思い立ちました。
 また、Andy氏による以下のソースコードを参考にしています。  
 https://github.com/andycb/AdventurerClientDotNet  
+- FlashPrint よりも Ultimaker Cura の方が明らかに印刷精度が上です。Cura で Adventurer3 を使える設定を公開してくれた Andy Bradford氏に改めて感謝の意を表します。
+- Cura のマシン設定で追加する Adventurer3 用の設定で、x と y の設定は 150 ではなく 155 で良いと思います。ただし、z は 150 です。
 - Python でコーディングするのは初めてでしたが、使いやすい言語と感じました。関数呼び出しに必ず付けなければいけないスコープ self. に何度もやられましたが・・・。
 - Cura の Plugin 開発も初めてでしたが、Document が少ないので試行錯誤の連続でした。Cura 付属の他の Plugin のソースコードが確認できたのは幸いでした。  
 
