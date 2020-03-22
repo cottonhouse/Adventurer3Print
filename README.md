@@ -36,7 +36,6 @@
 https://github.com/Ultimaker/Cura/wiki/CuraAPI-and-SDK-Versions  
 
     _plugin.json_  
-'''
     {  
         "name": "Adventurer3 Print",  
         "author": "Cottonhouse",  
@@ -45,7 +44,6 @@ https://github.com/Ultimaker/Cura/wiki/CuraAPI-and-SDK-Versions
         "description": "G-code print use WiFi at Flashforge Adventurer3.",  
         "catalog": "cotton"  
     }  
-'''
 
 - この Plugin の作成にあたり、以下のコードを参照しています。（take4blue 様に感謝）  
 https://github.com/take4blue/Adventurer3Web  
