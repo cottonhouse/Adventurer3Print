@@ -18,7 +18,7 @@
 ![Manage Printers](../image/image/ManagePrinters04.png)<BR>
 
 ### How to use
-モデルを Slice した後にファイル保存のボタンが表示されますが、この Plugin をインストールするとファイル保存ボタンとして ”Send Adv.3” という表示のボタンが選択できるようになります。その ”Send Adv.3” ボタンを押してください。
+モデルを Slice した後にファイル保存のボタンが表示されますが、この Plugin をインストールするとファイル保存ボタンとして ”Send to Adv.3” という表示のボタンが選択できるようになります。その ”Send to Adv.3” ボタンを押してください。
 ![Send Buttton](../image/image/SendButton01.png)<BR>
 ![Send Buttton](../image/image/SendButton02.png)<BR>
 ![Send Buttton](../image/image/SendButton03.png)<BR>
