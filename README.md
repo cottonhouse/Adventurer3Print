@@ -3,7 +3,7 @@
 ## Ultimaker Cura Plugin for Adventurer3 WiFi Print.
 
 ### How to install
-1. Cura の Plugin フォルダに適当なフォルダを作り、Plugin のファイルを全てコピーして下さい。
+1. Cura の Plugin フォルダに適当なフォルダを作り、Plugin のファイルを全てコピーして下さい。<BR>
     ex.  Windows10: %APPDATA%\cura\$CURA_VERSION\plugins\Adventurer3Print
          Mac OS   : $User/Library/Application\ Support/Cura/$CURA_VERSION/plugins/Adventurer3Print
 2. Cura の Machin name の設定の後ろに IP Address を追記してください。（Machine name + IP Address となるようにしてください。）
@@ -24,4 +24,5 @@ https://github.com/take4blue/Adventurer3Web
 - この Plugin の作成のきっかけは、以下のサイトです。（andy bradford 様に感謝）
 https://andybradford.dev/2020/01/12/using-the-monoprice-voxel-with-ultimaker-cura/
 
+### License
 この Plugin は AGPLv3 License です。（元にした Plugin サンプルファイルがAGPLv3なので。）
