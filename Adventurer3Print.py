@@ -283,8 +283,9 @@ class Controller:
                     else:
                         Logger.log("d", "Plugin Adv3: sendRaw Succeeded.")
                     #sleep(0.1)
-                    sleep(0.01) # 10ms
+                    #sleep(0.001) # 1ms
 
+                sleep(0.01)
                 Logger.log("d", "Plugin Adv3 Send: M29")
                 if self.is_ok(self.send("M29")):
                     Logger.log("d", "Plugin Adv3 Send: M23 0:/user/" + filename + ".g")
