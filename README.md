@@ -4,7 +4,7 @@
 ### How to install
 1. Cura の Plugin フォルダに適当なフォルダを作り、Plugin のファイル（Adventurer3Pint.py, \_\_init\_\_.py, pligin.json）をコピーしてください。<BR>
    ex.<BR>
-   Windows10: %APPDATA%\cura\$CURA_VERSION\plugins\Adventurer3Print<BR>
+   Windows10: %APPDATA%\cura\\$CURA_VERSION\plugins\Adventurer3Print<BR>
    Mac OS   : $User/Library/Application\ Support/Cura/$CURA_VERSION/plugins/Adventurer3Print<BR>
 2. Cura の Machin name の設定の後ろに IP Address を追記してください。（Machine name + IP Address となるようにしてください。）<BR>
    ex. Flashforge Adventurer3 192.168.1.5<BR>
