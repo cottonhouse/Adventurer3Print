@@ -27,31 +27,34 @@
 ![Send Buttton](../image/image/SendButton04.png)  
 
 ### Notice
-- この Plugin は、OS の USER フォルダを TEMP File 作成フォルダとして利用しています。G-Code の temporary file を作成して、WiFI 送信後に削除しています。  
+- この Plugin は、OS の USER フォルダを TEMP File 作成フォルダとして利用しています。G-Code の temporary file を作成して、WiFi 送信後に削除しています。
 - Cura では .3MF ファイルを Load するとマシン名の設定が変わることがあります。  
-この Plugin では、IP アドレスの設定をマシン名に追加していることが前提ですので、マシン名の設定が変更されると IP アドレスの設定が失われ、Plugin が WiFi 接続できなくなることがあります。その場合は、マシン名を再設定してください。  
+この Plugin では、IP アドレスの設定をマシン名の後に記載していることが前提ですので、マシン名の設定が変更されると IP アドレスの設定が失われ、Plugin が WiFi 接続できなくなることがあります。その場合は、マシン名を再設定してください。
 - Cura Version 4.5.0 の Mac版と Windows10版で動作確認しています。他の Version の Cura  でも（おそらく 4.2 以降であれば）動作すると思いますが、確認できていません。もし他の Version で使う場合は、plugin.json の API セクションの数値を編集してください。
 数値は次の URL を参照してください。（API 7.1 が Cura 4.5.0）  
+API　セクションで指定しない Version の Cura では、ボタンが表示されません。  
 複数値のリストも可能です。（例: "api": ["7.0", "7.1"]）  
 https://github.com/Ultimaker/Cura/wiki/CuraAPI-and-SDK-Versions  
 
-    _plugin.json_  
+    _plugin.json_
+```
     {  
         "name": "Adventurer3 Print",  
         "author": "Cottonhouse",  
         "version": "1.0",  
-        "api": "7.1",  
+        "api": "7.1",  <- HERE  
         "description": "G-code print use WiFi at Flashforge Adventurer3.",  
         "catalog": "cotton"  
-    }  
+    }
+```  
 
 - この Plugin の作成にあたり、以下のコードを参照しています。（take4blue 様に感謝）  
-https://github.com/take4blue/Adventurer3Web  
+https://github.com/take4blue/Adventurer3Web
 - この Plugin の作成のきっかけは、以下のサイトです。（Andy Bradford 様に感謝）  
-https://andybradford.dev/2020/01/12/using-the-monoprice-voxel-with-ultimaker-cura/  
+https://andybradford.dev/2020/01/12/using-the-monoprice-voxel-with-ultimaker-cura/
 - また、以下を参照しています。  
 https://github.com/andycb/AdventurerClientDotNet  
 
 ### License
 この Plugin は AGPLv3 or Higher License です。（元にした Plugin サンプルファイルが AGPLv3 or higherなので。）  
-This software is released under the AGPLv3 or higher License  
+This software is released under the AGPLv3 or higher License.  
