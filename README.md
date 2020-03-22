@@ -1,4 +1,12 @@
 # Ultimaker Cura Plugin for Adventurer3 WiFi Print.
+
+## This branch is for image of Documents.  
+## このブランチは、ドキュメントに使用されるイメージを保存しているブランチです。
+
+--------
+
+
+
 ## Adventurer3Print
 
 ### How to install
