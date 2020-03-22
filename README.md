@@ -1,5 +1,10 @@
 # Ultimaker Cura Plugin for Adventurer3 WiFi Print.
 
+## What is this?
+- 3D Print の OSS スライサーソフト Ultimaker Cura で、3D プリンタ FlashForge Adventurer3 に G-Code ファイルを WiFi 経由で送信する機能を持った、Ultimaker Cura の Plug-in です。
+- Ultimaker Cura 4.5.0 で動作確認しています。（おそらく Cura 4.4 でも動作しますが、設定ファイルの編集が必要です。）
+
+
 ## How to install
 0. 前提として、Ultimaker Cura で FlashForge Adventurer3 を使う設定が必要です。次のサイトを参照して設定してください。
    https://andybradford.dev/2020/01/12/using-the-monoprice-voxel-with-ultimaker-cura/
@@ -32,14 +37,12 @@
 - この Plugin は、OS の USER フォルダを TEMP File 作成フォルダとして利用しています。G-Code の temporary file を作成して、WiFi 送信後に削除しています。
 - Cura では .3MF ファイルを Load するとマシン名の設定が変わることがあります。  
 この Plugin では、IP アドレスの設定をマシン名の後に記載していることが前提ですので、マシン名の設定が変更されると IP アドレスの設定が失われ、Plugin が WiFi 接続できなくなることがあります。その場合は、マシン名を再設定してください。
-- Cura Version 4.5.0 の Mac版と Windows10版で動作確認しています。他の Version の Cura  でも（おそらく 4.4 以降であれば）動作すると思いますが、確認できていません。もし他の Version で使う場合は、plugin.json の API セクションの数値を編集してください。
+- Cura Version 4.5.0 の Mac版と Windows10版で動作確認しています。他の Version の Cura  でも（おそらく 4.4 以降であれば）動作すると思いますが、確認できていません。もし他の Version で使う場合は、plugin.json の API セクションの数値を編集してください。API セクションで指定しない Version の Cura では、”Send to Adv.3” のボタンが表示されません。  
 数値は次の URL を参照してください。（API 7.1 が Cura 4.5.0）複数値のリストも可能です。（例: "api": ["7.0", "7.1"]）  
-API セクションで指定しない Version の Cura では、ボタンが表示されません。  
 https://github.com/Ultimaker/Cura/wiki/CuraAPI-and-SDK-Versions  
 
 ```
     plugin.json
-
     {  
         "name": "Adventurer3 Print",  
         "author": "Cottonhouse",  
@@ -60,7 +63,7 @@ https://andybradford.dev/2020/01/12/using-the-monoprice-voxel-with-ultimaker-cur
 Andy Bradford氏による Ultimate Cura で Adventurer3 用の G-Code を作成する設定と、氏が WiFi での印刷を行おうとしている様子を見て、この Plugin 作成を思い立ちました。
 また、Andy氏による以下のソースコードを参考にしています。  
 https://github.com/andycb/AdventurerClientDotNet  
-- Python でコーディングするのは初めてでしたが、使いやすい言語と感じました。関数呼び出しに必ず付けなければいけないスコープ self. を除外して・・・。
+- Python でコーディングするのは初めてでしたが、使いやすい言語と感じました。関数呼び出しに必ず付けなければいけないスコープ self. に何度も躓きましたが・・・。
 - Cura の Plugin 開発も初めてでしたが、Document が少ないので試行錯誤の連続でした。Cura 付属の他の Plugin のソースコードが確認できたのは幸いでした。  
 
 
