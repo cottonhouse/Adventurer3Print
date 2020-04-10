@@ -12,13 +12,14 @@ from UM.OutputDevice.OutputDevice import OutputDevice #An interface to implement
 from UM.OutputDevice.OutputDeviceError import WriteRequestFailedError #For when something goes wrong.
 from UM.OutputDevice.OutputDevicePlugin import OutputDevicePlugin #The class we need to extend.
 from cura.Settings.ExtruderManager import ExtruderManager
+#from io import StringIO
 
 from UM.i18n import i18nCatalog
 catalog = i18nCatalog("cura")
 
 import socket
 import requests
-import re
+#import re
 from enum import Enum
 from time import sleep
 import binascii
@@ -210,12 +211,14 @@ class Controller:
         self.blockSize_ = 4096
         self.headerSize_ = 16
 
-        if path is not None:
-            fsize = os.stat(path).st_size
-        else:
+        if path is None:
             return False
         filename = os.path.splitext(os.path.basename(path))[0]
 
+        #### M104 ####
+        self.setExtruderNo(path)
+
+        fsize = os.stat(path).st_size
         try:
             Logger.log("d", "Plugin Adv3: Now Open file.")
             fp = open(path, "rb")
@@ -306,6 +309,24 @@ class Controller:
     def _onFinished(self, job):
         job.getStream().close() #Don't forget to close the stream after it's finished.
         Logger.log("d", "Sent file compete!")
+
+    def setExtruderNo(self, filename):
+        tmpfilename = filename + ".TMP"
+        with open(filename, "r", newline=os.linesep, encoding="utf-8") as rfp:
+            with open(tmpfilename, "w", newline=os.linesep, encoding="utf-8") as wfp:
+                for line in rfp:
+                    if line.split(" ")[0] == "M104" and line.split(" ")[1] != "S0" + os.linesep and len(line.split(" ")) == 2:
+                        Logger.log("d", "Plugin Adv3: Change G-Code: " + line)
+                        strtmp = line.rstrip(os.linesep) + " T0" + os.linesep
+                    else:
+                        strtmp = line
+                    wfp.write(strtmp)
+        # Exchange file
+        try:
+            os.remove(filename)
+            os.rename(tmpfilename, filename)
+        except OSError:
+            Logger.log("e", "Plugin Adv3: Can't delete and rename .gcode file.")
 
     def setHostname(self, hostname):
         self.hostname = hostname

@@ -46,9 +46,9 @@ https://github.com/Ultimaker/Cura/wiki/CuraAPI-and-SDK-Versions
     {  
         "name": "Adventurer3 Print",  
         "author": "Cottonhouse",  
-        "version": "1.0",  
+        "version": "1.1",  
         "api": "7.1",        <- ***HERE***  
-        "description": "G-code print use WiFi at Flashforge Adventurer3.",  
+        "description": "G-code print through WiFi with Flashforge Adventurer3.",  
         "catalog": "cotton"  
     }
 ```  
@@ -68,6 +68,9 @@ https://github.com/andycb/AdventurerClientDotNet
 - Python でコーディングするのは初めてでしたが、使いやすい言語と感じました。関数呼び出しに必ず付けなければいけないスコープ self. に何度もやられましたが・・・。
 - Cura の Plugin 開発も初めてでしたが、Document が少ないので試行錯誤の連続でした。Cura 付属の他の Plugin のソースコードが確認できたのは幸いでした。  
 
+## Revision history
+- 1.1 (M104ADDT0 Branch) Cure 4.5.0 で作成された G-code では M104 コマンドでエクストルーダの指定がなく、Adventurer3 の温度設定ができない事象に対応しました。
+  具体的には、エクストルーダ指定なしで M104 コマンドを用いて温度設定がされていたら、エクストルーダ指定を付与します。（0度指定以外で付与） 
 
 ## License
 この Plugin は AGPLv3 or Higher License です。（元にした Plugin サンプルファイルが AGPLv3 or higherなので。）  
