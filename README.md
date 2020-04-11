@@ -64,13 +64,14 @@ Andy Bradford氏による Ultimate Cura で Adventurer3 用の G-Code を作成�
 また、Andy氏による以下のソースコードを参考にしています。  
 https://github.com/andycb/AdventurerClientDotNet  
 - FlashPrint よりも Ultimaker Cura の方が明らかに印刷精度が上です。Cura で Adventurer3 を使える設定を公開してくれた Andy Bradford氏に改めて感謝の意を表します。
-- Cura のマシン設定で追加する Adventurer3 用の設定で、x と y の設定は 150 ではなく 155 で良いと思います。ただし、z は 150 です。
+- Cura のマシン設定で追加する Adventurer3 用の設定で、x と y の設定は 150 ではなく 155 で良いと思います。（x 152, y 157くらいが良いようです）ただし、z は 150 です。
 - Python でコーディングするのは初めてでしたが、使いやすい言語と感じました。関数呼び出しに必ず付けなければいけないスコープ self. に何度もやられましたが・・・。
 - Cura の Plugin 開発も初めてでしたが、Document が少ないので試行錯誤の連続でした。Cura 付属の他の Plugin のソースコードが確認できたのは幸いでした。  
 
 ## Revision history
-- 1.1 (M104ADDT0 Branch) Cure 4.5.0 で作成された G-code では M104 コマンドでエクストルーダの指定がなく、Adventurer3 の温度設定ができない事象に対応しました。
-  具体的には、エクストルーダ指定なしで M104 コマンドを用いて温度設定がされていたら、エクストルーダ指定を付与します。（0度指定以外で付与） 
+- 1.2 ファイル名の先頭にカスタマプリンタ名 "CFFFP_" が入るので、削除するようにしました。（ファイル名が長くなると Adventurer3 で見にくくなるため）
+- 1.1 (M104ADDT0 Branch) Cure 4.5.0 で作成された G-code で Adventurer3 の温度設定ができない事象(Curaの不具合?)に対応しました。
+  具体的には、エクストルーダ指定なしで M104 コマンドを用いて温度設定がされているので、エクストルーダ指定を付与しています。（0度指定以外で付与） 
 
 ## License
 この Plugin は AGPLv3 or Higher License です。（元にした Plugin サンプルファイルが AGPLv3 or higherなので。）  

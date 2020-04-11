@@ -170,7 +170,13 @@ class Adv3OutputDevice(OutputDevice): #We need an actual device to do the writin
             mes = "Already transferred a file '{0}' to the Adventurer3."
         else:
             mes = "Transfer FAILED. ({0}) "
-        message = Message(catalog.i18nc("@info:status", mes).format(os.path.splitext(os.path.basename(self.output_file_name))[0] + ".g"), title = catalog.i18nc("@info:title", "File transferred."))
+
+        ftmp = os.path.splitext(os.path.basename(self.output_file_name))[0]
+        if ftmp[:6] == "CFFFP_":
+            filename = ftmp[6:]
+        else:
+            filename = ftmp
+        message = Message(catalog.i18nc("@info:status", mes).format(filename + ".g"), title = catalog.i18nc("@info:title", "File transferred."))
         message.show()
 
     def isIPAddress(self, add):
@@ -213,12 +219,17 @@ class Controller:
 
         if path is None:
             return False
-        filename = os.path.splitext(os.path.basename(path))[0]
 
         #### M104 ####
         self.setExtruderNo(path)
-
         fsize = os.stat(path).st_size
+
+        ftmp = os.path.splitext(os.path.basename(path))[0]
+        if ftmp[:6] == "CFFFP_":
+            filename = ftmp[6:]
+        else:
+            filename = ftmp
+
         try:
             Logger.log("d", "Plugin Adv3: Now Open file.")
             fp = open(path, "rb")
